@@ -1,58 +1,46 @@
 # PROJECT.md
 
-Team: [9, team name]
-Members: [양대성, 홍푸른, 배지열, 임태훈]
-Last updated: [2026-09-27]
-
-One page.
-Draft it together before anyone writes a premortem, and come back to it after the merge.
-
-You are not committing to this.
-You are making it concrete enough to argue about, and concrete enough that a premortem about it means something.
-A project idea you cannot imagine failing in a specific way is not yet an idea.
-
-Later in the term you will run a Why Tree on this, and the Why Tree may well move it.
-That is expected, and it is not wasted work.
-
-Write in Korean or English.
-Keep the headings exactly as they are.
+Team: 9 (팀명 : Law Engine)
+Members: 임태훈, 배지열, 홍푸른, 양대성
+Last updated: 2026-10-04
 
 ---
 
 ## What we think we are building
 
-[Instead of viewing personal bankruptcy as traditional legal practice, we are approaching it as an industrial engineering problem by turning this highly repetitive casework into a strict production line. The platform we are building directly routes raw client financial documents into structured application drafts, stripping away the manual data entry so attorneys only step in for hard exceptions and final sign-offs.]
+개인회생의 반복 업무를 표준화된 처리 과정으로 바꾸는 AI 자동화 서비스.
+의뢰인의 금융 서류와 진술을 구조화해 신청서·진술서·변제계획 초안을 만들고, 진술과 증빙의 불일치 및 보정명령 답변과 기존 제출 서류 사이의 모순을 찾아 검토를 돕는다.
+수작업 입력과 대조를 줄여 담당자는 확인이 필요한 부분에, 변호사는 예외 판단과 최종 검토·승인에 집중하도록 한다.
 
 ## Who it is for
 
-- **Person:** [Paralegals and supervising attorneys running high-volume personal bankruptcy practices.]
-- **Situation:** [The exact moment a client dumps a chaotic pile of debt certificates, pay stubs, and asset records on their desk, and they have to extract the actual principal and interest to build a 36-month repayment schedule.]
-- **What they do today instead:** [Staff stare at PDFs to hunt for numbers, manually typing the exact same figures into Excel sheets and court forms over and over. When things don't add up, they waste hours chasing the client down on KakaoTalk or calling them just to plug holes in the data.]
+- **Person:** 개인회생 사건을 다수 처리하는 법률사무소의 사건 담당자, 상담직원, 담당 변호사. 의뢰인의 편의 요소를 더한다. 
+- **Situation:** 정리되지 않은 부채증명서·급여명세서·재산·소비내역에서 원금과 이자를 추출하고, 고객 진술과 증빙을 대조해 신청서류와 변제계획을 작성할 때. 보정명령을 받은 뒤 새 답변이 기존 제출 내용과 일치하는지 확인할 때도 해당한다. 
+- **What they do today instead:** 서식은 기존 회생 서류작성 프로그램으로 만들지만, 진술·증빙은 PDF나 출력물을 보며 대조하고 금액은 엑셀과 법원 양식에 반복 입력한다. 진술은 카카오톡·메일에서 다시 찾고, 제출 내용의 일관성은 담당자와 변호사의 기억에 의존한다. 누락·불일치는 의뢰인에게 연락해 확인하며, 놓친 내용은 보정명령 뒤에야 드러나기도 한다.
 
 ## How we know this problem is real
 
-[Nobody yet. We haven't actually sat inside a law office to watch the staff handle this manually.
-Right now, our evidence comes from securing 10 anonymized, previously completed personal bankruptcy case files for our initial pilot test. We are looking at the massive paper trail these cases generated and inferring that the manual data extraction must be a bottleneck, but we still need to go out and interview the actual paralegals who do the typing to prove it.]
+팀원인 Decent 법률사무소 대표 변호사 홍푸른의 현장 경험 공유에서 문제를 파악했다. 
+초기 파일럿용으로 비식별 처리된 개인회생 완료 사건 10건을 확보했으며, 서류량을 바탕으로 수작업 추출·대조가 병목일 것으로 추정한다. 다만 팀 차원의 직접 업무 관찰과 실무자 인터뷰는 아직 진행하지 않아, 실제 소요 시간과 불편의 크기는 정량적인 측정이 필요하다.
 
 ## Why us
 
-[One of our team members is actually a law firm CEO. This isn't a theoretical pain point we stumbled upon; it is a desperate bottleneck their own office deals with every single day. This gives us a live, built-in testing ground and immediate access to real staff who can tell us exactly what works and what fails. We can skip the cold-calling phase and deploy our pilot straight into a real practice.]
+법률사무소 대표인 팀원을 통해 실제 업무 시스템·데이터·실무자에게 접근할 수 있다. 개인정보 보호 요건을 충족하는 범위에서 해당 사무소를 파일럿 현장으로 활용하고, 담당자와 변호사의 피드백으로 효과와 오류를 확인할 수 있다.
 
 ## What would make us drop this idea
 
-[We will scrap this project if we hit any of these three hard stops:
- First, if strict privacy constraints prevent us from securing properly masked client files for our 10-case pilot, or if the staff running that pilot end up spending more time hunting down our extraction errors than they currently do typing the numbers from scratch.   
- Second, if our upcoming business consulting session with the professor confirms the business model lacks real commercial upside.
- Finally, if our specialized pipeline fails to beat a generic tool. If simply dumping all the raw client files into Astra yields a more accurate bankruptcy application draft, or if our approach fails to drastically cut token costs compared to that brute-force method, there is no reason to build this.]
+다음 중 하나에 해당하면 중단한다.
 
-The thing you are least sure about does not go here.
-It goes at the top of `docs/QUESTIONS.md`, because it is the best use of the 30 minutes.
+- **사용자 수요:** 조사한 사건 담당자·변호사 등 실무자의 60% 이상이 진술·증빙 대조에 현재 방식이나 프로그램으로 충분하다고 답한다. 조사 표본과 방식은 정해야 한다.
+- **데이터·업무 효율:** 개인정보 보호 제약으로 적절히 마스킹된 파일을 10건 파일럿에 사용할 수 없거나, 추출 오류를 찾아 수정하는 시간이 기존 수작업 입력 시간보다 길다.
+- **사업성:** 교수님과의 비즈니스 컨설팅에서 실질적인 상업적 가능성이 없다고 확인된다.
+- **범용 도구 대비 효과:** 동일 사건 자료를 Astra에 한꺼번에 입력하는 방식이 더 정확한 신청서 초안을 만들거나, 특화 파이프라인이 그 방식보다 토큰 비용을 크게 줄이지 못한다. 정확도 평가 기준과 비용 절감 목표는 파일럿 전에 정해야 한다.
 
 ---
 
 ## Revision log
 
-| Date | What changed and why |
-|---|---|
-| [YYYY-MM-DD] | Draft for consultation |
-| [YYYY-MM-DD] | Revised after consultation on [date]: [what changed] |
+|Date|What changed and why|
+|-|-|
+|\[2026-10-04]|Draft for consultation|
+|\[YYYY-MM-DD]|Revised after consultation on \[date]: \[what changed]|
