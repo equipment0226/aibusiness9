@@ -1,6 +1,6 @@
 # QUESTIONS.md
 
-Team: [9 and Law Engine]
+Team: [9 and Firm Engine]
 Last updated: [2026-10-05]
 
 Your biggest open questions about this project.

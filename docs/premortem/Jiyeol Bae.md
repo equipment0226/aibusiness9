@@ -1,6 +1,6 @@
 # Premortem — [배지열]
 
-Team: [9 and 빚오프]
+Team: [9 and Firm Engine]
 Written on: [2026-10-02]
 I wrote this before reading anyone else's list: [yes / no]
 

@@ -1,7 +1,7 @@
 # Premortem — \[임태훈]
 
-Team: \[9, 임태훈]
-Written on: \[20206-10-04]
+Team: \[9, Firm Engine]
+Written on: \[2026-10-04]
 I wrote this before reading anyone else's list: \[yes / ***no***] ***다른 사람의 것을 읽어보면 안된다는 instruction을 사전에 읽고 숙지하지 못했습니다. 죄송합니다.***
 
 Copy this file, rename it after yourself (for example `gildong.md`), and fill it in alone.

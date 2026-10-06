@@ -1,6 +1,6 @@
 # PREMORTEM.md
 
-Team: [9, Law Engine]
+Team: [9, Firm Engine]
 Members: [임태훈, 배지열, 홍푸른, 양대성]
 Merged on: [2026-10-05]
 Last updated: [YYYY-MM-DD]
